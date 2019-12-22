@@ -127,7 +127,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 }
 
 .searchResults .stageNumber {
-	font-size: 1.4em; 
+	font-size: 1.4em;
 }
 
 .searchResults td.stageMultiplier {
@@ -172,12 +172,12 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.6/angular.min.js"></script>
 	<script src="kspcalc.js"></script>
 	<script type="text/javascript">
-	
+
 function sortParts(parts, optimization) {
 	if (optimization !== "mass" && optimization !== "cost") {
 		optimization = "mass";
 	}
-	
+
 	var ascending = function (part) {
 		return part[optimization];
 	};
@@ -187,7 +187,7 @@ function sortParts(parts, optimization) {
 	var descending_fuelmass = function (part) {
 		return -part.mass_fuel;
 	};
-	
+
 	var types = _.groupBy(parts, "type");
 	return {
 		lfoEngines : _.sortBy(types[TYPES.LFO_ENGINE], descending),
@@ -198,7 +198,7 @@ function sortParts(parts, optimization) {
 		branches : types[TYPES.BRANCH]
 	}
 }
-	
+
 function SettingsController($scope) {
 	//default settings
 	$scope.optimization = "mass";
@@ -254,7 +254,7 @@ function SettingsController($scope) {
 	$scope.OPTIMIZATION_NAMES = OPTIMIZATION_NAMES;
 	$scope.Math = Math;
 	$scope.parseFloat = parseFloat;
-	
+
 	//static functions
 	function convertStaging(staging, args) {
 		var result;
@@ -295,7 +295,7 @@ function SettingsController($scope) {
 				newStage.boosters = KSP.Parts.countUnique(currentStage.boosters);
 				newStage.decouplers = KSP.Parts.countUnique(currentStage.decouplers);
 				newStage.branches = KSP.Parts.countUnique(currentStage.branches);
-				
+
 				result.stages.push(newStage);
 				currentStage = currentStage.next;
 			}
@@ -304,7 +304,7 @@ function SettingsController($scope) {
 		}
 		return result;
 	}
-	
+
 	function onSearchResult(staging) {
 		$scope.bestStagingsCount++;
 		staging = convertStaging(staging, $scope.bestStagingsArgs);
@@ -326,7 +326,7 @@ function SettingsController($scope) {
 			$scope.bestStagingsCount--;
 		}
 	}
-	
+
 	//methods
 	$scope.startSearch = function (args) {
 		args.interval = 500;  //slow down the search when processing in the main thread
@@ -336,9 +336,9 @@ function SettingsController($scope) {
 			});
 		});
 	};
-	
+
 	$scope.stopSearch = function () {};  //overwritten by startSearch
-	
+
 	$scope.getEnabledParts = function () {
 		var enabledParts = [];
 		var packs = $scope.packTree;
@@ -357,10 +357,10 @@ function SettingsController($scope) {
 		}
 		return enabledParts;
 	}
-	
+
 	$scope.search = function () {
 		$scope.stop();
-		
+
 		var args = {
 			id : Math.ceil(0xFFFFFFFF * Math.random()),
 			optimization : $scope.optimization,
@@ -392,30 +392,30 @@ function SettingsController($scope) {
 			stagesThrottleable : undefined,
 			parts : sortParts($scope.getEnabledParts(), $scope.optimization)
 		};
-		
+
 		$scope.bestStagings = [];
 		$scope.bestStagingsCount = 0;
 		$scope.bestStagingsValid = 0;
 		$scope.bestStagingsInvalid = 0;
 		$scope.bestStagingsArgs = args;
-		
+
 		var singleStage = findOptimalStage(args);
 		if (singleStage) {
 			singleStage.id = args.id;
 			onSearchResult(singleStage);
 		}
-		
+
 		if (args.maxStages > 1) {
 			$scope.searching = true;
 			$scope.startSearch(args);
 		}
 	}
-	
+
 	$scope.stop = function () {
 		$scope.stopSearch();
 		$scope.searching = false;
 	};
-	
+
 	//event listeners
 	$scope.onOptimizationChange = function () {
 		if (NEEDS_OPTIMIZATION2[$scope.optimization]) {
@@ -464,13 +464,13 @@ function SettingsController($scope) {
 			}
 		}
 	};
-	
+
 	//initialization
 	$scope.initialization = true;
 	$scope.packTree[0].enabled = true;
 	$scope.onPartListItemChange($scope.packTree[0]);
 	$scope.initialization = false;
-	
+
 	//web worker initialization
 	var kspcalcWorkers;
 	if (typeof Worker !== "undefined") {
@@ -520,11 +520,11 @@ function SettingsController($scope) {
 <body>
 	<div class="container">
 		<div class="page-header">
-			<h1>KSP Optimal Rocket Calculator <small>for Kerbal Space Program 1.2</small></h1>
+			<h1>KSP Optimal Rocket Calculator <small>for Kerbal Space Program 1.8</small></h1>
 		</div>
-		
+
 		<div ng-controller="SettingsController">
-		
+
 			<form name="settings" class="row">
 				<div class="col-md-6">
 					<div class="arguments form-horizontal">
@@ -546,7 +546,7 @@ function SettingsController($scope) {
 								</div>
 							</div>
 						</div>
-						
+
 						<div class="form-group">
 							<label for="settingsPayload" class="control-label col-sm-5">Payload</label>
 							<div class="col-sm-7">
@@ -556,7 +556,7 @@ function SettingsController($scope) {
 								</div>
 							</div>
 						</div>
-						
+
 						<div class="form-group">
 							<label for="settingsDeltaV" class="control-label col-sm-5">Minimum Total Delta-V</label>
 							<div class="col-sm-7">
@@ -566,7 +566,7 @@ function SettingsController($scope) {
 								</div>
 							</div>
 						</div>
-						
+
 						<div class="form-group">
 							<label for="settingsPlanet" class="control-label col-sm-5">Local Gravity</label>
 							<div class="col-sm-7">
@@ -577,7 +577,7 @@ function SettingsController($scope) {
 								</div>
 							</div>
 						</div>
-						
+
 						<div class="form-group">
 							<label for="settingsMinTWR" class="control-label col-sm-5">Initial Thrust-to-Weight Ratio</label>
 							<div class="col-sm-7">
@@ -588,7 +588,7 @@ function SettingsController($scope) {
 								</div>
 							</div>
 						</div>
-						
+
 						<div class="form-group">
 							<label for="settingsMaxTime" class="control-label col-sm-5">Stage Burn Time</label>
 							<div class="col-sm-7">
@@ -600,7 +600,7 @@ function SettingsController($scope) {
 								</div>
 							</div>
 						</div>
-						
+
 						<div class="form-group" ng-hide="optimization == 'mass'">
 							<label for="settingsMaxMass" class="control-label col-sm-5">Maximum Total Mass</label>
 							<div class="col-sm-7">
@@ -610,28 +610,28 @@ function SettingsController($scope) {
 								</div>
 							</div>
 						</div>
-						
+
 						<div class="form-group" ng-hide="optimization == 'partCount'">
 							<label for="settingsMaxPartCount" class="control-label col-sm-5">Maximum Total Part Count</label>
 							<div class="col-sm-7">
 								<input type="number" name="maxPartCount" min="1" step="1" placeholder="Infinity" id="settingsMaxPartCount" class="form-control" ng-model="maxPartCount"/>
 							</div>
 						</div>
-						
+
 						<div class="form-group">
 							<label for="settingsMaxStages" class="control-label col-sm-5">Maximum # of Stages</label>
 							<div class="col-sm-7">
 								<input type="number" name="maxStages" min="1" step="1" placeholder="1" id="settingsMaxStages" class="form-control" ng-model="maxStages" ng-change="onMaxStagesChange()"/>
 							</div>
 						</div>
-						
+
 						<div class="form-group">
 							<label for="settingsMaxStacks" class="control-label col-sm-5">Maximum # of Stacks</label>
 							<div class="col-sm-7">
 								<input type="number" name="maxStacks" min="1" step="1" max="50" placeholder="1" id="settingsMaxStacks" class="form-control" ng-model="maxStacks" ng-change="onMaxStacksChange()"/>
 							</div>
 						</div>
-						
+
 						<div class="form-group">
 							<label class="control-label col-sm-5">Staging Setup</label>
 							<div class="col-sm-7">
@@ -650,7 +650,7 @@ function SettingsController($scope) {
 								</div>
 							</div>
 						</div>
-						
+
 						<div class="form-group">
 							<label class="control-label col-sm-5">Options</label>
 							<div class="col-sm-7">
@@ -704,7 +704,7 @@ function SettingsController($scope) {
 								</div>
 							</div>
 						</div>
-						
+
 						<div class="actions row">
 							<div class="col-sm-offset-5 col-sm-7">
 								<button class="btn btn-primary" ng-disabled="settings.$invalid" ng-click="search()">Search</button>
@@ -713,7 +713,7 @@ function SettingsController($scope) {
 						</div>
 					</div>
 				</div>
-				
+
 				<div class="col-md-6">
 					<label>Available Parts</label>
 					<div class="availableParts partPacks partList well">
@@ -733,12 +733,12 @@ function SettingsController($scope) {
 					</div>
 				</div>
 			</form>
-			
+
 			<div class="donate">
 				<div class="alert alert-warning">
 					<h4>Find this tool useful? Like to see it continually supported?</h4>
 					<p>
-						I am a self-employed software developer who built this tool in my free time. 
+						I am a self-employed software developer who built this tool in my free time.
 						Unfortunately, I can't work on stuff like this all the time as I have to make money to eat and live.
 						With your support, I can continue working on this and other great tools for Kerbal Space Program that everyone can benefit from!
 					</p>
@@ -746,14 +746,14 @@ function SettingsController($scope) {
 						<input type="hidden" name="cmd" value="_s-xclick"/>
 						<input type="hidden" name="hosted_button_id" value="6E5RDXCCFK2KC"/>
 						<p class="donate-line">
-							Every little bit helps. So please, consider donating to my cause: 
+							Every little bit helps. So please, consider donating to my cause:
 							<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" class="btn" border="0" name="submit" alt="Donate via PayPal" style="vertical-align:middle;"/>
 						</p>
 					</form>
 					<p>Thanks!</p>
 				</div>
 			</div>
-		
+
 			<div class="searchProgress alert alert-info text-center" ng-show="bestStagingsArgs">
 				<h2 ng-if="bestStagingsArgs.maxStages > 1">Found {{bestStagingsValid}} Valid Rocket Designs<small ng-if="bestStagingsInvalid"> (and {{bestStagingsCount}} Invalid)</small></h2>
 				<h2 ng-if="bestStagingsArgs.maxStages <= 1">Most Optimal Rocket Design Found!</h2>
@@ -761,7 +761,7 @@ function SettingsController($scope) {
 					<button class="btn btn-danger" ng-click="stop()" ng-hide="!searching || bestStagingsArgs.maxStages <= 1">Stop</button>
 				</div>
 			</div>
-			
+
 			<div class="searchResults">
 				<details class="panel panel-default" ng-repeat="staging in bestStagings" ng-open="$first">
 					<summary class="panel-heading">
@@ -814,9 +814,9 @@ function SettingsController($scope) {
 					</table>
 				</details>
 			</div>
-			
+
 		</div>
-		
+
 		<div class="page-footer">
 			<p class="text-center">&copy; 2013 Gary Court - All rights reserved - Licensed under the <a href="LICENSE">BSD License</a> - <a href="CHANGELOG.md">Changelog</a></p>
 		</div>
