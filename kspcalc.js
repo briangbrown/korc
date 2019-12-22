@@ -27,7 +27,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
 var PLANETS = [
-    {name:"None", gravity:0},
+  {name:"None", gravity:0},
 	{name:"Moho", gravity:2.70},
 	{name:"Eve", gravity:16.7},
 	{name:"Gilly", gravity:0.049},
@@ -67,73 +67,83 @@ var TYPE_NAMES_PLURAL = {
 
 var PACKS = [
 	{
-		name:"Stock 1.2",
+		name:"Stock 1.8",
 		parts:[
-			//LF/O Engines
-			{"name":"S3 KS-25x4 \"Mammoth\" Liquid Fuel Engine","type":TYPES.LFO_ENGINE,"size":3,"cost":39000,"mass":15,"thrust_min":0,"thrust_max":4000,"throttleable":true,"isp_vac":315,"isp_atm":295,"thrust_atm":3746.031746031746,"thrust_vac":4000,"gimbal":2,"last":true},
-			{"name":"Kerbodyne KR-2L+ \"Rhino\" Liquid Fuel Engine","type":TYPES.LFO_ENGINE,"size":3,"cost":25000,"mass":9,"thrust_min":0,"thrust_max":2000,"throttleable":true,"isp_vac":340,"isp_atm":205,"thrust_atm":1205.8823529411766,"thrust_vac":2000,"gimbal":4},
-			{"name":"RE-M3 \"Mainsail\" Liquid Fuel Engine","type":TYPES.LFO_ENGINE,"size":2,"cost":13000,"mass":6,"thrust_min":0,"thrust_max":1500,"throttleable":true,"isp_vac":310,"isp_atm":285,"thrust_atm":1379.032258064516,"thrust_vac":1500,"gimbal":2},
-			{"name":"RE-I5 \"Skipper\" Liquid Fuel Engine","type":TYPES.LFO_ENGINE,"size":2,"cost":5300,"mass":3,"thrust_min":0,"thrust_max":650,"throttleable":true,"isp_vac":320,"isp_atm":280,"thrust_atm":568.75,"thrust_vac":650,"gimbal":2},
-			{"name":"RE-L10 \"Poodle\" Liquid Fuel Engine","type":TYPES.LFO_ENGINE,"size":2,"cost":1300,"mass":1.75,"thrust_min":0,"thrust_max":250,"throttleable":true,"isp_vac":350,"isp_atm":90,"thrust_atm":64.28571428571429,"thrust_vac":250,"gimbal":4.5},
-			{"name":"S3 KS-25 \"Vector\" Liquid Fuel Engine","type":TYPES.LFO_ENGINE,"size":1,"cost":18000,"mass":4,"thrust_min":0,"thrust_max":1000,"throttleable":true,"isp_vac":315,"isp_atm":295,"thrust_atm":936.5079365079365,"thrust_vac":1000,"gimbal":10.5},
-			{"name":"CR-7 R.A.P.I.E.R. Engine","type":TYPES.LFO_ENGINE,"size":1,"cost":6000,"mass":2,"thrust_min":0,"thrust_max":180,"throttleable":true,"isp_vac":305,"isp_atm":275,"thrust_atm":162.29508196721312,"thrust_vac":180,"gimbal":3},
-			{"name":"LV-T45 \"Swivel\" Liquid Fuel Engine","type":TYPES.LFO_ENGINE,"size":1,"cost":1200,"mass":1.5,"thrust_min":0,"thrust_max":215,"throttleable":true,"isp_vac":320,"isp_atm":250,"thrust_atm":167.96875,"thrust_vac":215,"gimbal":3},
-			{"name":"LV-T30 \"Reliant\" Liquid Fuel Engine","type":TYPES.LFO_ENGINE,"size":1,"cost":1100,"mass":1.25,"thrust_min":0,"thrust_max":240,"throttleable":true,"isp_vac":310,"isp_atm":265,"thrust_atm":205.16129032258064,"thrust_vac":240},
-			{"name":"T-1 Toroidal Aerospike \"Dart\" Liquid Fuel Engine","type":TYPES.LFO_ENGINE,"size":1,"cost":3850,"mass":1,"thrust_min":0,"thrust_max":180,"throttleable":true,"isp_vac":340,"isp_atm":290,"thrust_atm":153.529,"thrust_vac":180},
-			{"name":"LV-909 \"Terrier\" Liquid Fuel Engine","type":TYPES.LFO_ENGINE,"size":1,"cost":390,"mass":0.5,"thrust_min":0,"thrust_max":60,"throttleable":true,"isp_vac":345,"isp_atm":85,"thrust_atm":14.782608695652174,"thrust_vac":60,"gimbal":4},
-			{"name":"48-7S \"Spark\" Liquid Fuel Engine","type":TYPES.LFO_ENGINE,"size":0,"cost":240,"mass":0.1,"thrust_min":0,"thrust_max":20,"throttleable":true,"isp_vac":320,"isp_atm":270,"thrust_atm":16.875,"thrust_vac":20,"gimbal":3},
-			{"name":"LV-1 \"Ant\" Liquid Fuel Engine","type":TYPES.LFO_ENGINE,"size":0,"cost":110,"mass":0.02,"thrust_min":0,"thrust_max":2,"throttleable":true,"isp_vac":315,"isp_atm":80,"thrust_atm":0.507936507936508,"thrust_vac":2},
-			{"name":"Mk-55 \"Thud\" Liquid Fuel Engine","type":TYPES.LFO_ENGINE,"size":-1,"cost":820,"mass":0.9,"thrust_min":0,"thrust_max":120,"throttleable":true,"isp_vac":305,"isp_atm":275,"thrust_atm":108.19672131147541,"thrust_vac":120,"gimbal":8,"last":true,"radial":true},
-			{"name":"24-77 \"Twitch\" Liquid Fuel Engine","type":TYPES.LFO_ENGINE,"size":-1,"cost":400,"mass":0.09,"thrust_min":0,"thrust_max":16,"throttleable":true,"isp_vac":290,"isp_atm":250,"thrust_atm":13.793103448275861,"thrust_vac":16,"gimbal":8,"last":true,"radial":true},
-			{"name":"LV-1R \"Spider\" Liquid Fuel Engine","type":TYPES.LFO_ENGINE,"size":-1,"cost":120,"mass":0.02,"thrust_min":0,"thrust_max":2,"throttleable":true,"isp_vac":290,"isp_atm":260,"thrust_atm":1.793103448275862,"thrust_vac":2,"gimbal":10,"last":true,"radial":true},
-			
-			//LF/O Tanks
-			{"name":"Kerbodyne S3-14400 Tank","type":TYPES.LFO_TANK,"size":3,"cost":13000,"mass":9,"mass_fuel":72},
-			{"name":"Kerbodyne S3-7200 Tank","type":TYPES.LFO_TANK,"size":3,"cost":6500,"mass":4.5,"mass_fuel":36},
-			{"name":"Kerbodyne S3-3600 Tank","type":TYPES.LFO_TANK,"size":3,"cost":3250,"mass":2.25,"mass_fuel":18},
-			{"name":"Rockomax Jumbo-64 Fuel Tank","type":TYPES.LFO_TANK,"size":2,"cost":5750,"mass":4,"mass_fuel":32},
-			{"name":"Rockomax X200-32 Fuel Tank","type":TYPES.LFO_TANK,"size":2,"cost":3000,"mass":2,"mass_fuel":16},
-			{"name":"Rockomax X200-16 Fuel Tank","type":TYPES.LFO_TANK,"size":2,"cost":1550,"mass":1,"mass_fuel":8},
-			{"name":"Rockomax X200-8 Fuel Tank","type":TYPES.LFO_TANK,"size":2,"cost":800,"mass":0.5,"mass_fuel":4},
-			{"name":"FL-T800 Fuel Tank","type":TYPES.LFO_TANK,"size":1,"cost":800,"mass":0.5,"mass_fuel":4},
-			{"name":"FL-T400 Fuel Tank","type":TYPES.LFO_TANK,"size":1,"cost":500,"mass":0.25,"mass_fuel":2},
-			{"name":"FL-T200 Fuel Tank","type":TYPES.LFO_TANK,"size":1,"cost":275,"mass":0.125,"mass_fuel":1},
-			{"name":"FL-T100 Fuel Tank","type":TYPES.LFO_TANK,"size":1,"cost":150,"mass":0.0625,"mass_fuel":0.5},
-			{"name":"ROUND-8 Toroidal Fuel Tank","type":TYPES.LFO_TANK,"size":1,"cost":175,"mass":0.0375,"mass_fuel":0.3},
-			{"name":"Oscar-B Fuel Tank","type":TYPES.LFO_TANK,"size":0,"cost":70,"mass":0.025,"mass_fuel":0.2},
+      //LF/O Engines
+      {"name":"S3 KS-25x4 \"Mammoth\" Liquid Fuel Engine","type":TYPES.LFO_ENGINE,"size":3,"cost":39000,"mass":15,"thrust_min":0,"thrust_max":4000,"throttleable":true,"isp_vac":315,"isp_atm":295,"thrust_atm":3746.031746031746,"thrust_vac":4000,"gimbal":2,"last":true},
+      {"name":"Kerbodyne KR-2L+ \"Rhino\" Liquid Fuel Engine","type":TYPES.LFO_ENGINE,"size":3,"cost":25000,"mass":9,"thrust_min":0,"thrust_max":2000,"throttleable":true,"isp_vac":340,"isp_atm":205,"thrust_atm":1205.8823529411766,"thrust_vac":2000,"gimbal":4},
+      {"name":"RE-M3 \"Mainsail\" Liquid Fuel Engine","type":TYPES.LFO_ENGINE,"size":2,"cost":13000,"mass":6,"thrust_min":0,"thrust_max":1500,"throttleable":true,"isp_vac":310,"isp_atm":285,"thrust_atm":1379.032258064516,"thrust_vac":1500,"gimbal":2},
+      {"name":"RE-I5 \"Skipper\" Liquid Fuel Engine","type":TYPES.LFO_ENGINE,"size":2,"cost":5300,"mass":3,"thrust_min":0,"thrust_max":650,"throttleable":true,"isp_vac":320,"isp_atm":280,"thrust_atm":568.75,"thrust_vac":650,"gimbal":2},
+      {"name":"RE-L10 \"Poodle\" Liquid Fuel Engine","type":TYPES.LFO_ENGINE,"size":2,"cost":1300,"mass":1.75,"thrust_min":0,"thrust_max":250,"throttleable":true,"isp_vac":350,"isp_atm":90,"thrust_atm":64.28571428571429,"thrust_vac":250,"gimbal":5},
+      {"name":"S3 KS-25 \"Vector\" Liquid Fuel Engine","type":TYPES.LFO_ENGINE,"size":1,"cost":18000,"mass":4,"thrust_min":0,"thrust_max":1000,"throttleable":true,"isp_vac":315,"isp_atm":295,"thrust_atm":936.5079365079365,"thrust_vac":1000,"gimbal":10.5},
+      {"name":"CR-7 R.A.P.I.E.R. Engine","type":TYPES.LFO_ENGINE,"size":1,"cost":6000,"mass":2,"thrust_min":0,"thrust_max":180,"throttleable":true,"isp_vac":305,"isp_atm":275,"thrust_atm":162.29508196721312,"thrust_vac":180,"gimbal":3},
+      {"name":"LV-T45 \"Swivel\" Liquid Fuel Engine","type":TYPES.LFO_ENGINE,"size":1,"cost":1200,"mass":1.5,"thrust_min":0,"thrust_max":215,"throttleable":true,"isp_vac":320,"isp_atm":250,"thrust_atm":167.96875,"thrust_vac":215,"gimbal":3},
+      {"name":"LV-T30 \"Reliant\" Liquid Fuel Engine","type":TYPES.LFO_ENGINE,"size":1,"cost":1100,"mass":1.25,"thrust_min":0,"thrust_max":240,"throttleable":true,"isp_vac":310,"isp_atm":265,"thrust_atm":205.16129032258064,"thrust_vac":240},
+      {"name":"T-1 Toroidal Aerospike \"Dart\" Liquid Fuel Engine","type":TYPES.LFO_ENGINE,"size":1,"cost":3850,"mass":1,"thrust_min":0,"thrust_max":180,"throttleable":true,"thrust_atm":null,"thrust_vac":180},
+      {"name":"LV-909 \"Terrier\" Liquid Fuel Engine","type":TYPES.LFO_ENGINE,"size":1,"cost":390,"mass":0.5,"thrust_min":0,"thrust_max":60,"throttleable":true,"isp_vac":345,"isp_atm":85,"thrust_atm":14.782608695652174,"thrust_vac":60,"gimbal":4},
+      {"name":"48-7S \"Spark\" Liquid Fuel Engine","type":TYPES.LFO_ENGINE,"size":0,"cost":240,"mass":0.13,"thrust_min":0,"thrust_max":20,"throttleable":true,"isp_vac":320,"isp_atm":265,"thrust_atm":16.5625,"thrust_vac":20,"gimbal":3},
+      {"name":"LV-1 \"Ant\" Liquid Fuel Engine","type":TYPES.LFO_ENGINE,"size":0,"cost":110,"mass":0.02,"thrust_min":0,"thrust_max":2,"throttleable":true,"isp_vac":315,"isp_atm":80,"thrust_atm":0.507936507936508,"thrust_vac":2},
+      {"name":"Mk-55 \"Thud\" Liquid Fuel Engine","type":TYPES.LFO_ENGINE,"size":-1,"cost":820,"mass":0.9,"thrust_min":0,"thrust_max":120,"throttleable":true,"isp_vac":305,"isp_atm":275,"thrust_atm":108.19672131147541,"thrust_vac":120,"gimbal":8,"last":true,"radial":true},
+      {"name":"24-77 \"Twitch\" Liquid Fuel Engine","type":TYPES.LFO_ENGINE,"size":-1,"cost":230,"mass":0.08,"thrust_min":0,"thrust_max":16,"throttleable":true,"isp_vac":290,"isp_atm":275,"thrust_atm":15.172413793103448,"thrust_vac":16,"gimbal":8,"last":true,"radial":true},
+      {"name":"LV-1R \"Spider\" Liquid Fuel Engine","type":TYPES.LFO_ENGINE,"size":-1,"cost":120,"mass":0.02,"thrust_min":0,"thrust_max":2,"throttleable":true,"isp_vac":290,"isp_atm":260,"thrust_atm":1.793103448275862,"thrust_vac":2,"gimbal":10,"last":true,"radial":true},
 
-			//Boosters
-			{"name":"LFB KR-1x2 \"Twin-Boar\" Liquid Fuel Engine","type":TYPES.BOOSTER,"size":2,"cost":17000,"mass":10.5,"thrust_min":0,"thrust_max":2000,"throttleable":true,"isp_vac":300,"isp_atm":280,"thrust_atm":1866.6666666666667,"thrust_vac":2000,"gimbal":1.5,"mass_fuel":32,"last":true},
-			{"name":"S1 SRB-KD25k \"Kickback\" Solid Fuel Booster","type":TYPES.BOOSTER,"size":1,"cost":2700,"mass":4.5,"thrust_min":0,"thrust_max":670,"throttleable":false,"isp_vac":220,"isp_atm":195,"thrust_atm":593.8636363636364,"thrust_vac":670,"mass_fuel":19.5},
-			{"name":"BACC \"Thumper\" Solid Fuel Booster","type":TYPES.BOOSTER,"size":1,"cost":850,"mass":1.5,"thrust_min":0,"thrust_max":300,"throttleable":false,"isp_vac":210,"isp_atm":175,"thrust_atm":250,"thrust_vac":300,"mass_fuel":6.1499999999999995},
-			{"name":"RT-10 \"Hammer\" Solid Fuel Booster","type":TYPES.BOOSTER,"size":1,"cost":400,"mass":0.75,"thrust_min":0,"thrust_max":227,"throttleable":false,"isp_vac":195,"isp_atm":170,"thrust_atm":197.8974358974359,"thrust_vac":227,"mass_fuel":2.8125},
-			{"name":"RT-5 \"Flea\" Solid Fuel Booster","type":TYPES.BOOSTER,"size":1,"cost":200,"mass":0.45,"thrust_min":0,"thrust_max":192,"throttleable":false,"isp_vac":165,"isp_atm":140,"thrust_atm":162.9090909090909,"thrust_vac":192,"mass_fuel":1.05},
-			{"name":"Sepratron I","type":TYPES.BOOSTER,"size":-1,"cost":75,"mass":0.0125,"thrust_min":0,"thrust_max":18,"throttleable":false,"isp_vac":154,"isp_atm":118,"thrust_atm":13.792207792207792,"thrust_vac":18,"mass_fuel":0.06,"last":true,"radial":true},
-			
-			//Decouplers
-			{"name":"Heat Shield (3.75m)","type":TYPES.DECOUPLER,"size":3,"cost":900,"mass":1,"ejection_force":100},
-			{"name":"TR-38-D","type":TYPES.DECOUPLER,"size":3,"cost":600,"mass":0.8,"ejection_force":100},
-			{"name":"Heat Shield (10m)","type":TYPES.DECOUPLER,"size":2,"cost":2400,"mass":1.5,"ejection_force":100},
-			{"name":"Heat Shield (2.5m)","type":TYPES.DECOUPLER,"size":2,"cost":600,"mass":0.5,"ejection_force":100},
-			{"name":"TR-XL Stack Separator","type":TYPES.DECOUPLER,"size":2,"cost":900,"mass":0.45,"ejection_force":600},
-			{"name":"Rockomax Brand Decoupler","type":TYPES.DECOUPLER,"size":2,"cost":550,"mass":0.4,"ejection_force":250},
-			{"name":"Heat Shield (1.25m)","type":TYPES.DECOUPLER,"size":1,"cost":300,"mass":0.1,"ejection_force":100},
-			{"name":"TR-18D Stack Separator","type":TYPES.DECOUPLER,"size":1,"cost":600,"mass":0.075,"ejection_force":250},
-			{"name":"TR-18A Stack Decoupler","type":TYPES.DECOUPLER,"size":1,"cost":400,"mass":0.05,"ejection_force":250},
-			{"name":"Heat Shield (0.625m)","type":TYPES.DECOUPLER,"size":0,"cost":150,"mass":0.025,"ejection_force":50},
-			{"name":"TR-2C Stack Separator","type":TYPES.DECOUPLER,"size":0,"cost":450,"mass":0.02,"ejection_force":15},
-			{"name":"TR-2V Stack Decoupler","type":TYPES.DECOUPLER,"size":0,"cost":300,"mass":0.015,"ejection_force":15},
-			{"name":"Hydraulic Detachment Manifold","type":TYPES.DECOUPLER,"size":-1,"cost":770,"mass":0.4,"ejection_force":450,"last":true,"radial":true},
-			{"name":"Structural Pylon","type":TYPES.DECOUPLER,"size":-1,"cost":125,"mass":0.2,"ejection_force":250,"last":true,"radial":true},
-			{"name":"TT-70 Radial Decoupler","type":TYPES.DECOUPLER,"size":-1,"cost":700,"mass":0.05,"ejection_force":260,"last":true,"radial":true},
-			{"name":"Small Hardpoint","type":TYPES.DECOUPLER,"size":-1,"cost":60,"mass":0.05,"ejection_force":60,"last":true,"radial":true},
-			{"name":"TT-38K Radial Decoupler","type":TYPES.DECOUPLER,"size":-1,"cost":600,"mass":0.025,"ejection_force":250,"last":true,"radial":true},
-			
-			//Branches
-			{"name":"TVR-400L Stack Quad-Adapter","type":TYPES.BRANCH,"size":2,"cost":800,"mass":0.2,"sizeA":2,"sizeB":1,"multiplier":4},
-			{"name":"TVR-300L Stack Tri-Adapter","type":TYPES.BRANCH,"size":2,"cost":600,"mass":0.15,"sizeA":2,"sizeB":1,"multiplier":3},
-			{"name":"TVR-200L Stack Bi-Adapter","type":TYPES.BRANCH,"size":2,"cost":400,"mass":0.1,"sizeA":2,"sizeB":1,"multiplier":2},
-			{"name":"TVR-200 Stack Bi-Coupler","type":TYPES.BRANCH,"size":1,"cost":400,"mass":0.1,"sizeA":1,"sizeB":1,"multiplier":2}
+      //LF/O Tanks
+      {"name":"Kerbodyne S3-14400 Tank","type":TYPES.LFO_TANK,"size":3,"cost":13000,"mass":9,"mass_fuel":72},
+      {"name":"Kerbodyne S3-7200 Tank","type":TYPES.LFO_TANK,"size":3,"cost":6500,"mass":4.5,"mass_fuel":36},
+      {"name":"Kerbodyne S3-3600 Tank","type":TYPES.LFO_TANK,"size":3,"cost":3250,"mass":2.25,"mass_fuel":18},
+      {"name":"Rockomax Jumbo-64 Fuel Tank","type":TYPES.LFO_TANK,"size":2,"cost":5750,"mass":4,"mass_fuel":32},
+      {"name":"Rockomax X200-32 Fuel Tank","type":TYPES.LFO_TANK,"size":2,"cost":3000,"mass":2,"mass_fuel":16},
+      {"name":"Kerbodyne ADTP-2-3","type":TYPES.LFO_TANK,"size":2,"cost":1623,"mass":1.875,"mass_fuel":15},
+      {"name":"Rockomax X200-16 Fuel Tank","type":TYPES.LFO_TANK,"size":2,"cost":1550,"mass":1,"mass_fuel":8},
+      {"name":"Rockomax X200-8 Fuel Tank","type":TYPES.LFO_TANK,"size":2,"cost":800,"mass":0.5,"mass_fuel":4},
+      {"name":"FL-T800 Fuel Tank","type":TYPES.LFO_TANK,"size":1,"cost":800,"mass":0.5,"mass_fuel":4},
+      {"name":"FL-T400 Fuel Tank","type":TYPES.LFO_TANK,"size":1,"cost":500,"mass":0.25,"mass_fuel":2},
+      {"name":"FL-T200 Fuel Tank","type":TYPES.LFO_TANK,"size":1,"cost":275,"mass":0.125,"mass_fuel":1},
+      {"name":"FL-T100 Fuel Tank","type":TYPES.LFO_TANK,"size":1,"cost":150,"mass":0.0625,"mass_fuel":0.5},
+      {"name":"R-12 'Doughnut' External Tank","type":TYPES.LFO_TANK,"size":1,"cost":147,"mass":0.0375,"mass_fuel":0.30000000000000004},
+      {"name":"Oscar-B Fuel Tank","type":TYPES.LFO_TANK,"size":0,"cost":70,"mass":0.025,"mass_fuel":0.2},
+      {"name":"R-11 'Baguette' External Tank","type":TYPES.LFO_TANK,"size":-1,"cost":50,"mass":0.03375,"mass_fuel":0.27,"last":true,"radial":true},
+      {"name":"R-4 'Dumpling' External Tank","type":TYPES.LFO_TANK,"size":-1,"cost":50,"mass":0.01375,"mass_fuel":0.11,"last":true,"radial":true},
+
+      //Boosters
+      {"name":"S2-33 \"Clydesdale\" Solid Fuel Booster","type":TYPES.BOOSTER,"size":2,"cost":18500,"mass":21,"thrust_min":0,"thrust_max":3300,"throttleable":false,"isp_vac":235,"isp_atm":210,"thrust_atm":2948.936170212766,"thrust_vac":3300,"gimbal":1,"mass_fuel":123},
+      {"name":"LFB KR-1x2 \"Twin-Boar\" Liquid Fuel Engine","type":TYPES.BOOSTER,"size":2,"cost":17000,"mass":10.5,"thrust_min":0,"thrust_max":2000,"throttleable":true,"isp_vac":300,"isp_atm":280,"thrust_atm":1866.6666666666667,"thrust_vac":2000,"gimbal":1.5,"mass_fuel":32,"last":true},
+      {"name":"S2-17 \"Thoroughbred\" Solid Fuel Booster","type":TYPES.BOOSTER,"size":2,"cost":9000,"mass":10,"thrust_min":0,"thrust_max":1700,"throttleable":false,"isp_vac":230,"isp_atm":205,"thrust_atm":1515.2173913043478,"thrust_vac":1700,"gimbal":2,"mass_fuel":60},
+      {"name":"S1 SRB-KD25k \"Kickback\" Solid Fuel Booster","type":TYPES.BOOSTER,"size":1,"cost":2700,"mass":4.5,"thrust_min":0,"thrust_max":670,"throttleable":false,"isp_vac":220,"isp_atm":195,"thrust_atm":593.8636363636364,"thrust_vac":670,"mass_fuel":19.5},
+      {"name":"BACC \"Thumper\" Solid Fuel Booster","type":TYPES.BOOSTER,"size":1,"cost":850,"mass":1.5,"thrust_min":0,"thrust_max":300,"throttleable":false,"isp_vac":210,"isp_atm":175,"thrust_atm":250,"thrust_vac":300,"mass_fuel":6.1499999999999995},
+      {"name":"RT-10 \"Hammer\" Solid Fuel Booster","type":TYPES.BOOSTER,"size":1,"cost":400,"mass":0.75,"thrust_min":0,"thrust_max":227,"throttleable":false,"isp_vac":195,"isp_atm":170,"thrust_atm":197.8974358974359,"thrust_vac":227,"mass_fuel":2.8125},
+      {"name":"RT-10 \"Hammer\" Solid Fuel Booster","type":TYPES.BOOSTER,"size":1,"cost":400,"mass":0.75,"thrust_min":0,"thrust_max":227,"throttleable":false,"isp_vac":195,"isp_atm":170,"thrust_atm":197.8974358974359,"thrust_vac":227,"mass_fuel":2.8125},
+      {"name":"RT-5 \"Flea\" Solid Fuel Booster","type":TYPES.BOOSTER,"size":1,"cost":200,"mass":0.45,"thrust_min":0,"thrust_max":192,"throttleable":false,"isp_vac":165,"isp_atm":140,"thrust_atm":162.9090909090909,"thrust_vac":192,"mass_fuel":1.05},
+      {"name":"RT-5 \"Flea\" Solid Fuel Booster","type":TYPES.BOOSTER,"size":1,"cost":200,"mass":0.45,"thrust_min":0,"thrust_max":192,"throttleable":false,"isp_vac":165,"isp_atm":140,"thrust_atm":162.9090909090909,"thrust_vac":192,"mass_fuel":1.05},
+      {"name":"F3S0 \"Shrimp\" Solid Fuel Booster","type":TYPES.BOOSTER,"size":1,"cost":150,"mass":0.15,"thrust_min":0,"thrust_max":30,"throttleable":false,"isp_vac":215,"isp_atm":190,"thrust_atm":26.511627906976745,"thrust_vac":30,"mass_fuel":0.6749999999999999},
+      {"name":"FM1 \"Mite\" Solid Fuel Booster","type":TYPES.BOOSTER,"size":1,"cost":75,"mass":0.075,"thrust_min":0,"thrust_max":12.5,"throttleable":false,"isp_vac":210,"isp_atm":185,"thrust_atm":11.011904761904761,"thrust_vac":12.5,"mass_fuel":0.3},
+      {"name":"Sepratron I","type":TYPES.BOOSTER,"size":-1,"cost":75,"mass":0.0125,"thrust_min":0,"thrust_max":18,"throttleable":false,"isp_vac":154,"isp_atm":118,"thrust_atm":13.792207792207792,"thrust_vac":18,"mass_fuel":0.06,"last":true,"radial":true},
+
+      //Decouplers
+      {"name":"Heat Shield (3.75m)","type":TYPES.DECOUPLER,"size":3,"cost":1100,"mass":1,"ejection_force":100},
+      {"name":"TS-37 Stack Separator","type":TYPES.DECOUPLER,"size":3,"cost":500,"mass":0.48,"ejection_force":200},
+      {"name":"TD-37 Decoupler","type":TYPES.DECOUPLER,"size":3,"cost":375,"mass":0.36,"ejection_force":200},
+      {"name":"Heat Shield (10m)","type":TYPES.DECOUPLER,"size":2,"cost":2400,"mass":1.5,"ejection_force":100},
+      {"name":"Heat Shield (2.5m)","type":TYPES.DECOUPLER,"size":2,"cost":600,"mass":0.5,"ejection_force":100},
+      {"name":"TS-25 Stack Separator","type":TYPES.DECOUPLER,"size":2,"cost":400,"mass":0.21,"ejection_force":150},
+      {"name":"TD-25 Decoupler","type":TYPES.DECOUPLER,"size":2,"cost":300,"mass":0.16,"ejection_force":150},
+      {"name":"Heat Shield (1.25m)","type":TYPES.DECOUPLER,"size":1,"cost":300,"mass":0.1,"ejection_force":100},
+      {"name":"TS-12 Stack Separator","type":TYPES.DECOUPLER,"size":1,"cost":275,"mass":0.05,"ejection_force":100},
+      {"name":"TD-12 Decoupler","type":TYPES.DECOUPLER,"size":1,"cost":200,"mass":0.04,"ejection_force":100},
+      {"name":"Heat Shield (0.625m)","type":TYPES.DECOUPLER,"size":1,"cost":150,"mass":0.025,"ejection_force":50},
+      {"name":"TD-06 Decoupler","type":TYPES.DECOUPLER,"size":0,"cost":150,"mass":0.01,"ejection_force":50},
+      {"name":"TS-06 Stack Separator","type":TYPES.DECOUPLER,"size":0,"cost":215,"mass":0.01,"ejection_force":50},
+      {"name":"Hydraulic Detachment Manifold","type":TYPES.DECOUPLER,"size":-1,"cost":770,"mass":0.4,"ejection_force":450,"last":true,"radial":true},
+      {"name":"Structural Pylon","type":TYPES.DECOUPLER,"size":-1,"cost":125,"mass":0.2,"ejection_force":250,"last":true,"radial":true},
+      {"name":"Small Hardpoint","type":TYPES.DECOUPLER,"size":-1,"cost":60,"mass":0.05,"ejection_force":60,"last":true,"radial":true},
+      {"name":"TT-70 Radial Decoupler","type":TYPES.DECOUPLER,"size":-1,"cost":700,"mass":0.05,"ejection_force":260,"last":true,"radial":true},
+      {"name":"TT-38K Radial Decoupler","type":TYPES.DECOUPLER,"size":-1,"cost":600,"mass":0.025,"ejection_force":250,"last":true,"radial":true},
+
+      //Branches
+      {"name":"TVR-400L Stack Quad-Adapter","type":TYPES.BRANCH,"size":2,"cost":800,"mass":0.2,"sizeA":2,"sizeB":1,"multiplier":4},
+      {"name":"TVR-300L Stack Tri-Adapter","type":TYPES.BRANCH,"size":2,"cost":600,"mass":0.15,"sizeA":2,"sizeB":1,"multiplier":3},
+      {"name":"TVR-200L Stack Bi-Adapter","type":TYPES.BRANCH,"size":2,"cost":400,"mass":0.1,"sizeA":2,"sizeB":1,"multiplier":2},
+      {"name":"TVR-200 Stack Bi-Coupler","type":TYPES.BRANCH,"size":1,"cost":400,"mass":0.1,"sizeA":1,"sizeB":1,"multiplier":2},
 		]
 	}
 ];
@@ -185,7 +195,7 @@ var KSP = {
 			}
 			return unique;
 		},
-		
+
 		humanize : function (parts) {
 			var strBuild = [];
 			var uniqueParts = KSP.Parts.countUnique(parts);
@@ -196,25 +206,25 @@ var KSP = {
 			return strBuild.join(", ");
 		}
 	},
-	
+
 	Engine : {
 		//Engine fuel consumption at specified atmospheric pressure (t/s)
 		consumption : function (atm, engine) {
 			atm = Math.min(Math.max(atm, 0), 1);  //Atmospheric pressure's affect on engines maxes out at 1 (TODO: Confirm this)
 			return ((atm ? engine.thrust_atm : engine.thrust_vac) / ((engine.isp_vac * CONVERSION_FACTOR) - ((engine.isp_vac - engine.isp_atm) * CONVERSION_FACTOR * (atm || 0)))) || 0;
 		},
-		
+
 		//Engine fuel consumption in vacuum (t/s)
 		consumptionVac : function (engine) {
 			return (engine.thrust_vac / (engine.isp_vac * CONVERSION_FACTOR)) || 0;
 		},
-		
+
 		//Engine fuel consumption in atmosphere (t/s)
 		consumptionAtm : function (engine) {
 			return (engine.thrust_atm / (engine.isp_atm * CONVERSION_FACTOR)) || 0;
 		}
 	},
-	
+
 	Stage : {
 		//Number of parts in this stage only
 		partCount : function (stage) {
@@ -227,27 +237,27 @@ var KSP = {
 				((stage.branches || 0).length || 0)
 			) * (stage.multiplier || 1);
 		},
-		
+
 		//Cost of this stage only
 		cost : function (stage) {
 			return (
 				(stage.others ? stage.others.map(pluckNumber.bind(this, "cost")).reduce(sum, 0) : 0) +
-				(stage.lfoTanks ? stage.lfoTanks.map(pluckNumber.bind(this, "cost")).reduce(sum, 0) : 0) + 
+				(stage.lfoTanks ? stage.lfoTanks.map(pluckNumber.bind(this, "cost")).reduce(sum, 0) : 0) +
 				(stage.lfoEngines ? stage.lfoEngines.map(pluckNumber.bind(this, "cost")).reduce(sum, 0) : 0) +
 				(stage.boosters ? stage.boosters.map(pluckNumber.bind(this, "cost")).reduce(sum, 0) : 0) +
 				(stage.decouplers ? stage.decouplers.map(pluckNumber.bind(this, "cost")).reduce(sum, 0) : 0) +
 				(stage.branches ? stage.branches.map(pluckNumber.bind(this, "cost")).reduce(sum, 0) : 0)
 			) * (stage.multiplier || 1);
 		},
-		
+
 		//Thrust of active engines during this stage only (kN)
 		thrust : function (stage, atm) {
 			return (
-				(stage.lfoEngines ? stage.lfoEngines.map(pluckNumber.bind(this, (atm ? "thrust_atm" : "thrust_vac"))).reduce(sum, 0) : 0) + 
+				(stage.lfoEngines ? stage.lfoEngines.map(pluckNumber.bind(this, (atm ? "thrust_atm" : "thrust_vac"))).reduce(sum, 0) : 0) +
 				(stage.boosters ? stage.boosters.map(pluckNumber.bind(this, (atm ? "thrust_atm" : "thrust_vac"))).reduce(sum, 0) : 0)
 			) * (stage.multiplier || 1);
 		},
-		
+
 		//Mass of just the fuel of this stage only (t)
 		massFuelStart : function (stage) {
 			return (
@@ -255,24 +265,24 @@ var KSP = {
 				(stage.boosters ? stage.boosters.map(pluckNumber.bind(this, "mass_fuel")).reduce(sum, 0) : 0)
 			) * (stage.multiplier || 1);
 		},
-		
+
 		//Mass of this stage only (t)
 		massStart : function (stage) {
 			return (
-				(stage.payload || 0) + 
+				(stage.payload || 0) +
 				(stage.others ? stage.others.map(pluckNumber.bind(this, "mass")).reduce(sum, 0) : 0) +
-				(stage.lfoTanks ? stage.lfoTanks.map(pluckNumber.bind(this, "mass")).reduce(sum, 0) + stage.lfoTanks.map(pluckNumber.bind(this, "mass_fuel")).reduce(sum, 0) : 0) + 
+				(stage.lfoTanks ? stage.lfoTanks.map(pluckNumber.bind(this, "mass")).reduce(sum, 0) + stage.lfoTanks.map(pluckNumber.bind(this, "mass_fuel")).reduce(sum, 0) : 0) +
 				(stage.lfoEngines ? stage.lfoEngines.map(pluckNumber.bind(this, "mass")).reduce(sum, 0) : 0) +
 				(stage.boosters ? stage.boosters.map(pluckNumber.bind(this, "mass")).reduce(sum, 0) + stage.boosters.map(pluckNumber.bind(this, "mass_fuel")).reduce(sum, 0) : 0) +
 				(stage.decouplers ? stage.decouplers.map(pluckNumber.bind(this, "mass")).reduce(sum, 0) : 0) +
 				(stage.branches ? stage.branches.map(pluckNumber.bind(this, "mass")).reduce(sum, 0) : 0)
 			) * (stage.multiplier || 1);
 		},
-		
+
 		//Mass of this stage only at the specified time from the beginning of this stage's burn (t)
 		massAt : function (stage, atm, time) {
 			time = Math.max(time, 0);
-			var mass = (stage.payload || 0) + 
+			var mass = (stage.payload || 0) +
 				(stage.others ? stage.others.map(pluckNumber.bind(this, "mass")).reduce(sum, 0) : 0) +
 				(stage.lfoEngines ? stage.lfoEngines.map(pluckNumber.bind(this, "mass")).reduce(sum, 0) : 0) +
 				(stage.decouplers ? stage.decouplers.map(pluckNumber.bind(this, "mass")).reduce(sum, 0) : 0) +
@@ -295,77 +305,77 @@ var KSP = {
 			}
 			return mass * (stage.multiplier || 1);
 		},
-		
+
 		//Mass of this stage only at end of burn (t)
 		massEndStage : function (stage) {
 			return (
-				(stage.payload || 0) + 
+				(stage.payload || 0) +
 				(stage.others ? stage.others.map(pluckNumber.bind(this, "mass")).reduce(sum, 0) : 0) +
-				(stage.lfoTanks ? stage.lfoTanks.map(pluckNumber.bind(this, "mass")).reduce(sum, 0) : 0) + 
+				(stage.lfoTanks ? stage.lfoTanks.map(pluckNumber.bind(this, "mass")).reduce(sum, 0) : 0) +
 				(stage.lfoEngines ? stage.lfoEngines.map(pluckNumber.bind(this, "mass")).reduce(sum, 0) : 0) +
 				(stage.boosters ? stage.boosters.map(pluckNumber.bind(this, "mass")).reduce(sum, 0) : 0) +
 				(stage.decouplers ? stage.decouplers.map(pluckNumber.bind(this, "mass")).reduce(sum, 0) : 0) +
 				(stage.branches ? stage.branches.map(pluckNumber.bind(this, "mass")).reduce(sum, 0) : 0)
 			) * (stage.multiplier || 1);
 		},
-		
+
 		//Stage fuel consumption at specified atmospheric pressure (t/s)
 		consumption : function (stage, atm) {
 			return (
-				(stage.lfoEngines ? stage.lfoEngines.map(KSP.Engine.consumption.bind(this, atm)).reduce(sum, 0) : 0) + 
+				(stage.lfoEngines ? stage.lfoEngines.map(KSP.Engine.consumption.bind(this, atm)).reduce(sum, 0) : 0) +
 				(stage.boosters ? stage.boosters.map(KSP.Engine.consumption.bind(this, atm)).reduce(sum, 0) : 0)
 			) * (stage.multiplier || 1);
 		},
-		
+
 		//Combined specific impulse at atmospheric pressure (m/s)
 		impulse : function (stage, atm) {
 			return (KSP.Stage.thrust(stage, atm) / KSP.Stage.consumption(stage, atm)) || 0;
 		},
-		
+
 		//Time required to use all fuel in this stage only at full thrust at specified atmospheric pressure (s)
 		timeStage : function (stage, atm) {
 			return (KSP.Stage.massFuelStart(stage) / KSP.Stage.consumption(stage, atm)) || 0;
 		}
 	},
-	
+
 	Stages : {
 		//Number of parts of all stages
 		partCount : function (stage) {
 			return KSP.Stage.partCount(stage) +
 				(stage.next ? KSP.Stages.partCount(stage.next) : 0);
 		},
-		
+
 		//Total cost of all stages
 		cost : function (stage) {
 			return KSP.Stage.cost(stage) +
 				(stage.next ? KSP.Stages.cost(stage.next) : 0);
 		},
-		
+
 		//Thrust of all active engines during this stage (kN)
 		thrust : function (stage, atm) {
 			return KSP.Stage.thrust(stage, atm) +
 				(stage.parallel ? KSP.Stages.thrust(stage.next, atm) : 0);
 		},
-		
+
 		//Total mass of all stages (t)
 		massStart : function (stage) {
 			return KSP.Stage.massStart(stage) +
 				(stage.next ? KSP.Stages.massStart(stage.next) : 0);
 		},
-		
+
 		//Total mass of all stages at the specified time from the beginning of this stage's burn, assuming no jettisoned stages (t)
 		massAt : function (stage, atm, time) {
 			var mass;
-			
+
 			if (time > 0) {
 				var timeEmpty = KSP.Stages.timeStage(stage, atm);
-				
+
 				if (time < timeEmpty) {
 					mass = KSP.Stage.massStart(stage) - (consumption * time);
 				} else {
 					mass = KSP.Stage.massEndStage(stage);  //assume we haven't jettisoned this stage yet
 				}
-				
+
 				if (stage.next) {
 					if (stage.parallel && !stage.asparagus) {
 						mass += KSP.Stages.massAt(stage.next, atm, time);
@@ -376,10 +386,10 @@ var KSP = {
 			} else {
 				mass = KSP.Stages.massStart(stage);
 			}
-			
+
 			return mass;
 		},
-		
+
 		//Total mass of all stages at end of burn of this stage (t)
 		massEndStage : function (stage, atm) {
 			if (stage.parallel && !stage.asparagus) {
@@ -388,61 +398,61 @@ var KSP = {
 			return KSP.Stage.massEndStage(stage) +
 				(stage.next ? KSP.Stages.massStart(stage.next) : 0);
 		},
-		
+
 		//Total mass of all stages at end of burn of all stages, assuming no jettisoned stages (t)
 		massEndTotal : function (stage) {
 			return KSP.Stage.massEndStage(stage) +
 				(stage.next ? KSP.Stages.massEndTotal(stage.next) : 0);
 		},
-		
+
 		//Thrust-to-Weight Ratio
 		twr : function (stage, atm, planet) {
 			return (KSP.Stages.thrust(stage, atm) / (KSP.Stages.massStart(stage) * planet.gravity)) || 0;
 		},
-		
+
 		//Total stage fuel consumption at specified atmospheric pressure (t/s)
 		consumption : function (stage, atm) {
 			return KSP.Stage.consumption(stage, atm) +
 				(stage.parallel ? KSP.Stages.consumption(stage.next, atm) : 0);
 		},
-		
+
 		//Combined specific impulse at atmospheric pressure (m/s)
 		impulse : function (stage, atm) {
 			return (KSP.Stages.thrust(stage, atm) / KSP.Stages.consumption(stage, atm)) || 0;
 		},
-		
+
 		//Delta-V at atmospheric pressure of this stage only (m/s)
 		deltaVStage : function (stage, atm) {
 			return (Math.log((KSP.Stages.massStart(stage) * 1000) / (KSP.Stages.massEndStage(stage, atm) * 1000)) * KSP.Stages.impulse(stage, atm)) || 0;
 		},
-		
+
 		//Delta-V at atmospheric pressure of all stages (m/s)
 		deltaVTotal : function (stage, atm) {
 			return KSP.Stages.deltaVStage(stage, atm) +
 				(stage.next ? KSP.Stages.deltaVTotal(stage.next, atm) : 0);
 		},
-		
+
 		//Time required to use all fuel in this stage at full thrust at specified atmospheric pressure (s)
 		timeStage : function (stage, atm) {
 			return (KSP.Stage.massFuelStart(stage) / KSP.Stages.consumption(stage, atm)) || 0;
 		},
-		
+
 		//Time required to use all fuel in all stages at full thrust at specified atmospheric pressure (s)
 		timeTotal : function (stage, atm) {
 			var time = KSP.Stages.timeStage(stage, atm);
-			
+
 			while (stage.next && stage.parallel && !stage.asparagus) {
 				time = Math.max(time, KSP.Stages.timeStage(stage.next, atm));
 				stage = stage.next;
 			}
-			
+
 			if (stage.next) {
 				time += KSP.Stages.timeTotal(stage.next, atm);
 			}
-			
+
 			return time;
 		},
-		
+
 		humanize : function (stage, planet, atm) {
 			var strBuild = [];
 			if (stage.multiplier > 1) strBuild.push("x" + stage.multiplier + ":");
@@ -493,7 +503,7 @@ function fixArgs(args) {
 	args.stagesMaxStacks = args.stagesMaxStacks || 1;
 	args.stagesAsparagus = !!args.stagesAsparagus;
 	args.stagesParallel = !!args.stagesParallel || args.stagesAsparagus;
-	args.stagesThrottleable = args.stagesThrottleable; 
+	args.stagesThrottleable = args.stagesThrottleable;
 	args.parts = args.parts || {};
 	args.parts.lfoEngines = args.parts.lfoEngines || [];
 	args.parts.lfoTanks = args.parts.lfoTanks || [];
@@ -514,7 +524,7 @@ function getMetric(stage, args) {
 	} else {
 		metric = KSP.Stages.massStart(stage);
 	}
-	
+
 	if (args.optimization2) {
 		var metric2;
 		if (args.optimization2 === "mass") {
@@ -526,22 +536,22 @@ function getMetric(stage, args) {
 		} else {
 			metric2 = 1 - (1 / KSP.Stages.massStart(stage));
 		}
-		
+
 		metric += metric2;
 	}
-	
+
 	return metric;
 }
 
 function findOptimalStage(args) {
 	fixArgs(args);
-	
+
 	var bestStage = null;
 	var stage = null;
 	//parallel stages must have two stacks, or the same # of stacks (if greater) as the next stage (simplifies design)
 	var stackMultiplier = Math.max((args.next.multiplier || 1), ((args.parallel || (args.next.lfoEngines && (args.next.lfoEngines.length > 1 || (args.next.lfoEngines[0] || 0).last)) || (args.next.boosters && (args.next.boosters.length > 1 || (args.next.boosters[0] || 0).last))) ? 2 : 1));
 	var bestStackDecoupler, bestRadialDecoupler;
-	
+
 	//
 	//LF/O Engines
 	//
@@ -562,45 +572,45 @@ function findOptimalStage(args) {
 		metric : Infinity,
 		deltaV : 0
 	};
-	
+
 	bestStackDecoupler = args.parts.stackDecouplers[0];
 	bestRadialDecoupler = args.parts.radialDecouplers[0];
-	
+
 	nextEngine: for (var e = 0, el = args.parts.lfoEngines.length; e <= el; ++e) {
 		var engine = args.parts.lfoEngines[e] || NO_ENGINE;
-		
+
 		if (typeof args.gimbal === "boolean" && args.gimbal != (engine.gimbal > 0)) continue nextEngine;
 		if (typeof args.throttleable === "boolean" && typeof engine.throttleable === "boolean" && args.throttleable != engine.throttleable) continue nextEngine;
-		
+
 		var branches = [];
 		if (args.cluster) {
 			branches = args.parts.branches.filter(function (branch) {
 				return (args.tankDiametersEqualEngineDiameter ? branch.sizeB === engine.size : branch.sizeB >= engine.size);
 			});
 		}
-		
+
 		nextBranch: for (var c = -1, cl = (engine.radial ? 0 : branches.length); c < cl; ++c) {
 			var branch = branches[c];
 			var engineMultiplier = (branch || 0).multiplier || 1;
-			
+
 			stage.lfoEngines = [];
 			stage.branches = [];
 			stage.others = [];
-			
+
 			//add fuel ducts for asparagus staging
 			if (stage.asparagus) stage.others.push(FUEL_DUCT);
-			
+
 			//add branch
 			if (branch) stage.branches.push(branch);
-			
+
 			nextEngineCount: for (var ec = 1, ecl = (engine.radial ? args.maxSymmetry : 1); ec <= ecl; ++ec) {
 				//add engine * branch multiplier
 				for (var y = 0; y < engineMultiplier; ++y) {
 					stage.lfoEngines.push(engine);
 				}
-				
+
 				stage.lfoTanks = [];
-				
+
 				nextTank: for (var skippedTank, t = 0, tl = args.parts.lfoTanks.length; t < tl || skippedTank; ++t) {
 					//if we are out of tanks, but skipped some, go back and try them
 					if (t >= tl) {
@@ -609,9 +619,9 @@ function findOptimalStage(args) {
 						stage.lfoTanks = [];
 						continue nextTank;
 					}
-					
+
 					var tank = args.parts.lfoTanks[t];
-					
+
 					if (args.tankDiametersEqual && !tank.radial) {
 						if (branch && branch.sizeA !== tank.size) {
 							//this tank will not work
@@ -630,20 +640,20 @@ function findOptimalStage(args) {
 							}
 						}
 					}
-					
+
 					var diff = (stage.lfoTanks.length === 0 ? 8 : Math.ceil(args.parts.lfoTanks[t-1].mass_fuel / tank.mass_fuel));
 					nextTankCount: for (var tc = 1; tc < diff; ++tc) {
 						stage.lfoTanks.push(tank);
 						stage.decouplers = [];
-						
+
 						nextStackCount: for (var sc = stackMultiplier; sc <= args.maxStacks; sc += stackMultiplier) {
 							stage.multiplier = sc;
-							
+
 							if (engine.radial && stage.multiplier === 1) {
 								//prevent a single radial engine on a single stack
 								continue nextStackCount;
 							}
-							
+
 							//add decouplers
 							if (args.decoupling) {
 								if (stage.multiplier === 1) {
@@ -654,7 +664,7 @@ function findOptimalStage(args) {
 									}
 								}
 							}
-						
+
 							if (args.maxPartCount !== Infinity && KSP.Stages.partCount(stage) > args.maxPartCount) {
 								//too many parts, try something different
 								if (sc === stackMultiplier) {
@@ -663,7 +673,7 @@ function findOptimalStage(args) {
 									break;
 								}
 							}
-							
+
 							if (args.maxMass !== Infinity && KSP.Stages.massStart(stage) > args.maxMass) {
 								//parts are too heavy
 								if (sc === stackMultiplier) {
@@ -673,10 +683,10 @@ function findOptimalStage(args) {
 									break;
 								}
 							}
-							
+
 							var twr = KSP.Stages.twr(stage, args.atm, args.planet);
 							var time = KSP.Stages.timeStage(stage, args.atm);
-							
+
 							if (twr < args.minTWR || time > args.maxTime) {
 								if (KSP.Stages.deltaVStage(stage, args.atm) >= args.deltaV) {
 									//last tank was too big
@@ -694,7 +704,7 @@ function findOptimalStage(args) {
 								var dV = KSP.Stages.deltaVStage(stage, args.atm);
 								if (twr <= args.maxTWR && time >= args.minTime && dV >= args.deltaV) {
 									stage.metric = getMetric(stage, args);
-									
+
 									if (!bestStage || stage.metric < bestStage.metric) {
 										bestStage = {
 											next : stage.next,
@@ -713,7 +723,7 @@ function findOptimalStage(args) {
 											deltaV : dV
 										};
 									}
-									
+
 									if (sc === stackMultiplier) {
 										stage.lfoTanks.pop();
 										continue nextTank;
@@ -728,11 +738,11 @@ function findOptimalStage(args) {
 			}
 		}
 	}
-	
+
 	//
 	//Boosters
 	//
-	
+
 	stage = {
 		next : args.next,
 		multiplier : 0,
@@ -749,33 +759,33 @@ function findOptimalStage(args) {
 		metric : Infinity,
 		deltaV : 0
 	};
-	
+
 	bestStackDecoupler = args.parts.stackDecouplers[0];
 	bestRadialDecoupler = args.parts.radialDecouplers[0];
-	
+
 	nextBooster: for (var b = 0, bl = args.parts.boosters.length; b < bl; ++b) {
 		var booster = args.parts.boosters[b];
-		
+
 		if (typeof args.gimbal === "boolean" && args.gimbal != (booster.gimbal > 0)) continue nextBooster;
 		if (typeof args.throttleable === "boolean" && typeof booster.throttleable === "boolean" && args.throttleable != booster.throttleable) continue nextBooster;
-		
+
 		if (args.tankDiametersEqual && !booster.radial && bestStackDecoupler && bestStackDecoupler.size !== booster.size) {
 			var newDecouplerIndex = args.parts.stackDecouplers.map(pluck.bind(this, "size")).indexOf(booster.size);
 			if (newDecouplerIndex > -1) {
 				bestStackDecoupler = args.parts.stackDecouplers[newDecouplerIndex];
 			}
 		}
-		
+
 		stage.boosters = [ booster ];
-		
+
 		nextStackCount: for (var sc = stackMultiplier; sc <= args.maxStacks; sc += stackMultiplier) {
 			stage.multiplier = sc;
-		
+
 			if (booster.radial && stage.multiplier === 1) {
 				//prevents a single radial booster on a single stack
 				continue nextStackCount;
 			}
-			
+
 			//add decouplers
 			if (args.decoupling) {
 				if (stage.multiplier === 1) {
@@ -786,7 +796,7 @@ function findOptimalStage(args) {
 					}
 				}
 			}
-		
+
 			if (args.maxPartCount !== Infinity && KSP.Stages.partCount(stage) > args.maxPartCount) {
 				//too many parts, try something different
 				if (sc === stackMultiplier) {
@@ -795,7 +805,7 @@ function findOptimalStage(args) {
 					break;
 				}
 			}
-			
+
 			if (args.maxMass !== Infinity && KSP.Stages.massStart(stage) > args.maxMass) {
 				//parts are too heavy
 				if (sc === stackMultiplier) {
@@ -805,7 +815,7 @@ function findOptimalStage(args) {
 					break;
 				}
 			}
-			
+
 			var twr = KSP.Stages.twr(stage, args.atm, args.planet);
 			var time = KSP.Stages.timeStage(stage, args.atm);
 			if (twr > args.maxTWR || time < args.minTime || time > args.maxTime) {
@@ -814,7 +824,7 @@ function findOptimalStage(args) {
 				var dV = KSP.Stages.deltaVStage(stage, args.atm);
 				if (twr >= args.minTWR && dV >= args.deltaV) {
 					stage.metric = getMetric(stage, args);
-					
+
 					if (!bestStage || stage.metric < bestStage.metric) {
 						bestStage = {
 							next : stage.next,
@@ -833,33 +843,33 @@ function findOptimalStage(args) {
 							deltaV : dV
 						};
 					}
-					
+
 					continue nextBooster;
 				}
 			}
 		}
 	}
-	
-	
+
+
 	//remove empty engines
 	if (bestStage && bestStage.lfoEngines[0] === NO_ENGINE) {
 		bestStage.lfoEngines = [];
 	}
-	
+
 	return bestStage;
 }
 
 function findRandomOptimalStaging(args) {
 	fixArgs(args);
 	var randomSolution = null;
-	
+
 	if (args.maxStages === 1) {
 		randomSolution = findOptimalStage(args);
 	} else {
 		var firstArgs = Object.create(args);
 		firstArgs.deltaV = Math.round(args.deltaV * Math.random());
 		var firstStage = findOptimalStage(firstArgs);
-		
+
 		if (firstStage) {
 			var secondArgs = Object.create(args);
 			secondArgs.next = firstStage;
@@ -871,12 +881,12 @@ function findRandomOptimalStaging(args) {
 			secondArgs.decoupling = true;
 			secondArgs.maxStages = args.maxStages - 1;
 			var secondStage = findOptimalStage(secondArgs);
-			
+
 			var nextStage = null;
 			if (secondArgs.maxStages > 1) {
 				nextStage = findRandomOptimalStaging(secondArgs);
 			}
-			
+
 			if (secondStage && (!nextStage || secondStage.metric < nextStage.metric)) {
 				randomSolution = secondStage;
 			} else if (nextStage) {
@@ -884,7 +894,7 @@ function findRandomOptimalStaging(args) {
 			}
 		}
 	}
-	
+
 	return randomSolution;
 }
 
@@ -902,7 +912,7 @@ function searchForOptimalStaging(args, callback) {
 		}
 	}
 	timerId = setTimeout(routine, (args.interval || 10));
-	
+
 	return function cancel() {
 		cancelled = true;
 		clearTimeout(timerId);
@@ -914,7 +924,7 @@ function searchForOptimalStaging(args, callback) {
 if (typeof document === "undefined") {
 	var global = this;
 	var cancelGlobalSearcher = function () {};
-	
+
 	addEventListener('message', function onmessage(evt) {
 		cancelGlobalSearcher();
 		var args = evt.data;
