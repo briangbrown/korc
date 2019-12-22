@@ -2,7 +2,7 @@
   var trim = function (str) {
     return str.replace(/\s+$/, "");
   };
-  
+
   var $garbage = [];
 }
 
@@ -22,10 +22,15 @@ ANY = text:[^\n]+ { return trim(text.join("")); }
 VAR = text:[0-9A-Za-z_,]+ { return text.join(""); }
 SLASH = text:("/" !"/") { return "/"; }
 VALUE = text:([^\n/] / SLASH)+ { return trim(text.join("")); }
+LOC_VALUE = "//#autoLOC_" [0-9]+ WS* "=" WS* value:VALUE { return value; }
 
-VARIABLE = NIL name:VAR WS* "=" WS* value:VALUE? NIL
+VARIABLE = NIL name:VAR WS* "=" WS* value:VALUE loc_value:LOC_VALUE ? NIL
 {
-  return [name, value];
+  if (loc_value) {
+    return [name, loc_value];
+  } else {
+    return [name, value];
+  }
 }
 
 BLOCK = type:VAR NIL "{" NIL properties:PROPERTIES NIL ("}" NIL / EOF)  /* GARBAGE: EOF */
@@ -55,14 +60,14 @@ PROPERTIES = properties:(BLOCK / VARIABLE / GARBAGE)*
 
 /* Ignores illegal entries */
 
-GARBAGE = garbage:[^\n{}]+ ("\n" / EOF) 
+GARBAGE = garbage:[^\n{}]+ ("\n" / EOF)
 {
   $garbage.push({
     start : location().start,
     end   : location().end,
     value : garbage.join("")
   });
-  return; 
+  return;
 }
 
 EOF_GARBAGE = garbage:.* EOF
@@ -72,5 +77,5 @@ EOF_GARBAGE = garbage:.* EOF
     end   : location().end,
     value : garbage.join("")
   });
-  return; 
+  return;
 }
