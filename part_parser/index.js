@@ -86,14 +86,14 @@ allParts.sort(partSortByName);
 var results = [];
 allParts.forEach(function (part) {
   let partName = part.name[part.name.length-1];
+  let resultName = part.title ? part.title[part.title.length-1] : partName;
   var result = {
-    name : part.title ? part.title[part.title.length-1] : partName,
+    name : resultName,
     type : "TYPES.UNKNOWN",
     size : -1,
     cost : part.cost ? parseInt(part.cost[part.cost.length-1]) : 0,
     mass : part.mass ? parseFloat(part.mass[part.mass.length-1]) : 0
   };
-  console.log(partName + ", " + result.name);
 
   //Determine if part is radially attached
   var radial = false;
