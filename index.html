@@ -140,13 +140,13 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
   list-style: none;
 }
 
-.searchResults .decouplers { color: gray; }
+.searchResults .decouplers a { color: gray; }
 .searchResults .payload { color: black; }
-.searchResults .others { color: orange; }
-.searchResults .lfoTanks { color: darkblue; }
-.searchResults .branches { color: gray; }
-.searchResults .lfoEngines { color: crimson; }
-.searchResults .boosters { color: darkviolet; }
+.searchResults .others a { color: orange; }
+.searchResults .lfoTanks a { color: darkblue; }
+.searchResults .branches a { color: gray; }
+.searchResults .lfoEngines a { color: crimson; }
+.searchResults .boosters a { color: darkviolet; }
 .searchResults .multiplier { font-weight: bold; }
 
 .donate {
@@ -794,13 +794,13 @@ function SettingsController($scope) {
                 </td>
                 <td class="parts partList">
                   <ol>
-                    <li class="decouplers" ng-repeat="part in stage.decouplers">{{part.name}}<span class="multiplier" ng-if="part.count > 1"> x{{part.count}}</span></li>
+                    <li class="decouplers" ng-repeat="part in stage.decouplers"><a href={{part.url}} target="_blank">{{part.name}}</a><span class="multiplier" ng-if="part.count > 1"> x{{part.count}}</span></li>
                     <li class="payload" ng-if="stage.payload > 0">Payload: {{stage.payload}}t</li>
-                    <li class="others" ng-repeat="part in stage.others">{{part.name}}<span class="multiplier" ng-if="part.count > 1"> x{{part.count}}</span></li>
-                    <li class="lfoTanks" ng-repeat="part in stage.lfoTanks">{{part.name}}<span class="multiplier" ng-if="part.count > 1"> x{{part.count}}</span></li>
-                    <li class="branches" ng-repeat="part in stage.branches">{{part.name}}<span class="multiplier" ng-if="part.count > 1"> x{{part.count}}</span></li>
-                    <li class="lfoEngines" ng-repeat="part in stage.lfoEngines">{{part.name}}<span class="multiplier" ng-if="part.count > 1"> x{{part.count}}</span></li>
-                    <li class="boosters" ng-repeat="part in stage.boosters">{{part.name}}<span class="multiplier" ng-if="part.count > 1"> x{{part.count}}</span></li>
+                    <li class="others" ng-repeat="part in stage.others"><a href={{part.url}} target="_blank">{{part.name}}</a><span class="multiplier" ng-if="part.count > 1"> x{{part.count}}</span></li>
+                    <li class="lfoTanks" ng-repeat="part in stage.lfoTanks"><a href={{part.url}} target="_blank">{{part.name}}</a><span class="multiplier" ng-if="part.count > 1"> x{{part.count}}</span></li>
+                    <li class="branches" ng-repeat="part in stage.branches"><a href={{part.url}} target="_blank">{{part.name}}</a><span class="multiplier" ng-if="part.count > 1"> x{{part.count}}</span></li>
+                    <li class="lfoEngines" ng-repeat="part in stage.lfoEngines"><a href={{part.url}} target="_blank">{{part.name}}</a><span class="multiplier" ng-if="part.count > 1"> x{{part.count}}</span></li>
+                    <li class="boosters" ng-repeat="part in stage.boosters"><a href={{part.url}} target="_blank">{{part.name}}</a><span class="multiplier" ng-if="part.count > 1"> x{{part.count}}</span></li>
                   </ol>
                 </td>
                 <td class="stageMultiplier"><span ng-if="stage.multiplier > 1">x{{stage.multiplier}}</span></td>
