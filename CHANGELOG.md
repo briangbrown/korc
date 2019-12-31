@@ -1,3 +1,9 @@
+**Version 1.22 - December 31, 2019**
+* Updated parts for KSP 1.8
+* Added links to KSP parts wiki in results
+* Updated the parts parser to deal with v2 parts (overrides v1)
+* Updated the parts parser to deal with localization strings
+
 **Version 1.21 - November 30, 2015**
 * Fixed atmospheric/vacuum thrust values for engine parts in 1.0.5.
 
